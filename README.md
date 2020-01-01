@@ -1,18 +1,13 @@
 # amazing race mvp
 
 ## todo:
-* track players and deposits 
+* race owner authz function, utilizing RaceMarker Root node secret
 * race lifecycle:
-  * add waypoints
   * start race (state)
-  * finish race (state)
+  * complete race (state)
   * abort race (state)
-
-
-* enable multiple races
-  * create race
-  * deposit threshold to start race
   * gc races (reclaim state)
+* zero knowledge proofs for authz and proving
 
 
 ## MVP
@@ -33,6 +28,6 @@ call prove on a secret:
     `ar.prove.call("pacific city", {from: accounts[0]})`
 
 generate the keccak256 hash of a new string 
-    `ar.gimmie("something else")`
+    `ar.keccak256helper("something else")`
 
 

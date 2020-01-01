@@ -3,10 +3,10 @@ pragma solidity >=0.4.21 <0.7.0;
 interface AmazingRace {
 
   struct RaceMarker {
-    // handy identifier for this race marker
-    string markerId;
-    // next waypoint/marker id; implementation must ensure this is acyclic
-    string nextMarker;
+    // identifier for this race marker
+    uint8 markerId;
+    // next waypoint/marker id; implementation must ensure this is acyclic and unique
+    uint8 nextMarkerId;
     // keccak256 hash of the marker value at this location
     bytes32 markerHash;
     // encrypted hint/instructions for finding this waypont, decryptable via the marker value of the prior waypoint
@@ -16,12 +16,14 @@ interface AmazingRace {
   }
 
   struct Race {
-    //race identifier
+    // state of race, 1 -> unstarted, 15 -> running, 127 -> completed, 255 -> closed
+    uint8 raceState;
+    //race identifier id, and the implied RaceMarker start id
     string raceId;
     // map of all racers, address to registration time
     mapping(address => uint) racers;
     // map of all waypoints/markers
-    mapping(string => RaceMarker) markerMap;
+    mapping(uint8 => RaceMarker) markerMap;
   }
 
   /*
@@ -41,12 +43,11 @@ interface AmazingRace {
    * construction.
    *
    * raceId - string id used to identify the race
-   * waypointId - string id used to identify the waypoint marker
    * waypointHash - bytes32 keccak256 hash of the waypoint value
    * waypointSecret - hint/instructions for finding this waypoint
    *
    */
-  function addWaypoint(string calldata raceId, string calldata waypointId, bytes32 waypointHash, string calldata waypointSecret) external;
+  function addWaypoint(string calldata raceId, bytes32 waypointHash, string calldata waypointSecret) external returns (bool, uint8);
 
   /*
    * Begin the race represented by this raceId, if the correct secret is supplied.
@@ -77,5 +78,9 @@ interface AmazingRace {
    */
   function completeRace(string calldata raceId) external;
 
-  function keccak256helper(string calldata thing) external pure returns (bytes32);
+  /*
+   * Check to see if this race has begun.
+   */
+  function isRaceRunning(string calldata raceId) external returns (bool);
+
 }
