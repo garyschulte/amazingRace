@@ -32,18 +32,16 @@ contract mvp is AmazingRace, ERC165Mappable {
 
   function addWaypoint(string calldata raceId, bytes32 waypointHash, string calldata waypointSecret) external returns (bool, uint8) {
     //TODO: add race owner logic for authz
-    if (markerExists(raceId, 1)) {
+    if (markerExists(raceId, RACE_MARKER_ROOT)) {
       if (races[raceId].raceState == STATE_INIT) {
-        uint8 raceMarkerId = RACE_MARKER_ROOT;
-        uint8 newRaceMarkerId = raceMarkerId + 1;
+        uint8 newRaceMarkerId = RACE_MARKER_ROOT + 1;
         // TODO: safe arithmetic here
         while(markerExists(raceId, newRaceMarkerId)) {
-          raceMarkerId = raceMarkerId + 1;
-          newRaceMarkerId = raceMarkerId + 1;
+          newRaceMarkerId = newRaceMarkerId + 1;
         }
-        // TODO: safe arithmetic here
         races[raceId].markerMap[newRaceMarkerId] = RaceMarker(newRaceMarkerId, RACE_MARKER_NONE, waypointHash, waypointSecret);
-        races[raceId].markerMap[raceMarkerId].nextMarkerId = newRaceMarkerId;
+        // TODO: safe arithmetic here
+        races[raceId].markerMap[newRaceMarkerId - 1].nextMarkerId = newRaceMarkerId;
         return (true, STATE_INIT);
       }
       return (false, races[raceId].raceState);

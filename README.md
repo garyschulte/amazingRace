@@ -36,6 +36,10 @@ call prove on a secret:
   or, to see the return:    
     `ar.prove.call("test", 1, "secret", {from: accounts[0]})`
 
+add waypoint:
+    `ar.addWaypoint("test", "0x68d391d6a308dac63ad363202f23f2e3626a5b067d0c5bf8bd51c4c96a8facb2", "more encrypted hint text", {from: accounts[0]})`
+  prove that one:    
+    `ar.prove.call("test", 2, "second secret", {from: accounts[0]})`
 
 
 
