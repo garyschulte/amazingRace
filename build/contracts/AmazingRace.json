@@ -106,9 +106,9 @@
           "type": "string"
         },
         {
-          "internalType": "string",
+          "internalType": "uint8",
           "name": "markerId",
-          "type": "string"
+          "type": "uint8"
         },
         {
           "internalType": "string",
@@ -149,7 +149,7 @@
       "type": "function"
     },
     {
-      "constant": false,
+      "constant": true,
       "inputs": [
         {
           "internalType": "string",
@@ -166,16 +166,16 @@
         }
       ],
       "payable": false,
-      "stateMutability": "nonpayable",
+      "stateMutability": "view",
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"raceId\",\"type\":\"string\"},{\"internalType\":\"bytes32\",\"name\":\"waypointHash\",\"type\":\"bytes32\"},{\"internalType\":\"string\",\"name\":\"waypointSecret\",\"type\":\"string\"}],\"name\":\"addWaypoint\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"},{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"raceId\",\"type\":\"string\"}],\"name\":\"completeRace\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"raceId\",\"type\":\"string\"},{\"internalType\":\"bytes32\",\"name\":\"startMarkerHash\",\"type\":\"bytes32\"},{\"internalType\":\"string\",\"name\":\"startMarkerSecret\",\"type\":\"string\"}],\"name\":\"createRace\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"raceId\",\"type\":\"string\"}],\"name\":\"isRaceRunning\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"raceId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"markerId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"markerValue\",\"type\":\"string\"}],\"name\":\"prove\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"proven\",\"type\":\"bool\"},{\"internalType\":\"uint8\",\"name\":\"cause\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"raceId\",\"type\":\"string\"}],\"name\":\"register\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"raceId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"raceSecret\",\"type\":\"string\"}],\"name\":\"startRace\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/garyschulte/dev/crypto/amazing_race/contracts/AmazingRace.sol\":\"AmazingRace\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/garyschulte/dev/crypto/amazing_race/contracts/AmazingRace.sol\":{\"keccak256\":\"0x876438129da27c02be1dee13eea917b63df47b1024f4cd97cd272cc4544ba999\",\"urls\":[\"bzz-raw://950ab8faee6415dc54ac8fb320dff0cc792b1aed48d5c1684cf8314647b5562f\",\"dweb:/ipfs/QmdGwpxkhJE8aNY3xNHHvo3B84C9x4MKpVvBKtTK82LEav\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"raceId\",\"type\":\"string\"},{\"internalType\":\"bytes32\",\"name\":\"waypointHash\",\"type\":\"bytes32\"},{\"internalType\":\"string\",\"name\":\"waypointSecret\",\"type\":\"string\"}],\"name\":\"addWaypoint\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"},{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"raceId\",\"type\":\"string\"}],\"name\":\"completeRace\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"raceId\",\"type\":\"string\"},{\"internalType\":\"bytes32\",\"name\":\"startMarkerHash\",\"type\":\"bytes32\"},{\"internalType\":\"string\",\"name\":\"startMarkerSecret\",\"type\":\"string\"}],\"name\":\"createRace\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"string\",\"name\":\"raceId\",\"type\":\"string\"}],\"name\":\"isRaceRunning\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"raceId\",\"type\":\"string\"},{\"internalType\":\"uint8\",\"name\":\"markerId\",\"type\":\"uint8\"},{\"internalType\":\"string\",\"name\":\"markerValue\",\"type\":\"string\"}],\"name\":\"prove\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"proven\",\"type\":\"bool\"},{\"internalType\":\"uint8\",\"name\":\"cause\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"raceId\",\"type\":\"string\"}],\"name\":\"register\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"raceId\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"raceSecret\",\"type\":\"string\"}],\"name\":\"startRace\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/garyschulte/dev/crypto/amazing_race/contracts/AmazingRace.sol\":\"AmazingRace\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/garyschulte/dev/crypto/amazing_race/contracts/AmazingRace.sol\":{\"keccak256\":\"0x7665187c64162d2e820fd1e5db485065b7a189c229da5b87d9e5076904ea0007\",\"urls\":[\"bzz-raw://508c206a9ae5036db815d721a7a0c38d7813b4e601eaaedfa1a43a1680082eef\",\"dweb:/ipfs/QmV56CP9SCJrnN7TJyEk4NuPzaNBZd7d7Q9qdjewwDzZ3o\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "pragma solidity >=0.4.21 <0.7.0;\n\ninterface AmazingRace {\n\n  struct RaceMarker {\n    // identifier for this race marker\n    uint8 markerId;\n    // next waypoint/marker id; implementation must ensure this is acyclic and unique\n    uint8 nextMarkerId;\n    // keccak256 hash of the marker value at this location\n    bytes32 markerHash;\n    // encrypted hint/instructions for finding this waypont, decryptable via the marker value of the prior waypoint\n    string markerSecret;\n    // map players/racers => timestamp if/when they have found the marker\n    mapping(address => uint) foundByRacers;\n  }\n\n  struct Race {\n    // state of race, 1 -> unstarted, 15 -> running, 127 -> completed, 255 -> closed\n    uint8 raceState;\n    //race identifier id, and the implied RaceMarker start id\n    string raceId;\n    // map of all racers, address to registration time\n    mapping(address => uint) racers;\n    // map of all waypoints/markers\n    mapping(uint8 => RaceMarker) markerMap;\n  }\n\n  /*\n   * Create a race.  An initial deposit is required to start a race and seed the pot.\n   * raceId - string id used to identify the race\n   * startMarkerHash - bytes32 keccak256 hash of the marker value at the beginning of the race.\n   * startMarkerSecret - string hash of the key necessary for the race owner to enable/start the race.\n   *\n   */\n  function createRace(string calldata raceId, bytes32 startMarkerHash, string calldata startMarkerSecret) external payable;\n\n  /*\n   * Add a waypoint to the race.  The race is essentially a list of RaceMarker waypoints and this\n   * function adds the waypoint to the tail of the list.\n   * The waypoint hint/instructions are encrypted with the marker VALUE of the prior waypoint\n   * as a key.  This implies off-chain encryption and coordination in the race app during race\n   * construction.\n   *\n   * raceId - string id used to identify the race\n   * waypointHash - bytes32 keccak256 hash of the waypoint value\n   * waypointSecret - hint/instructions for finding this waypoint\n   *\n   */\n  function addWaypoint(string calldata raceId, bytes32 waypointHash, string calldata waypointSecret) external returns (bool, uint8);\n\n  /*\n   * Begin the race represented by this raceId, if the correct secret is supplied.\n   * raceId - string id used to identify the race\n   * startMarker - race start marker secret value\n   */\n  function startRace(string calldata raceId, string calldata raceSecret) external payable;\n\n\n  /*\n   * Register to participate in this race.  Registration is payable, since the game's pot is self-funding.\n   * string raceId - id of the race for which you wish to register.\n   */\n  function register(string calldata raceId) external payable;\n\n  /*\n   * Prove you have found the waypoint.  Returns boolean and a cause.\n   * raceId - string id of the race\n   * markerId - string id of the marker/waypoint\n   * markerValue - the marker value satisfying marker hash\n   */\n  function prove(string calldata raceId, string calldata markerId, string calldata markerValue) external returns (bool proven, uint8 cause);\n\n  /*\n   * Once you have discovered all waypoints you may complete the race.\n   * If you are the first race entrant to complete, you win the pot.\n   *\n   */\n  function completeRace(string calldata raceId) external;\n\n  /*\n   * Check to see if this race has begun.\n   */\n  function isRaceRunning(string calldata raceId) external returns (bool);\n\n}\n",
+  "source": "pragma solidity >=0.4.21 <0.7.0;\n\ninterface AmazingRace {\n\n  struct RaceMarker {\n    // identifier for this race marker\n    uint8 markerId;\n    // next waypoint/marker id; implementation must ensure this is acyclic and unique\n    uint8 nextMarkerId;\n    // keccak256 hash of the marker value at this location\n    bytes32 markerHash;\n    // encrypted hint/instructions for finding this waypont, decryptable via the marker value of the prior waypoint\n    string markerSecret;\n    // map players/racers => timestamp if/when they have found the marker\n    mapping(address => uint) foundByRacers;\n  }\n\n  struct Race {\n    // state of race, 1 -> unstarted, 15 -> running, 127 -> completed, 255 -> closed\n    uint8 raceState;\n    //race identifier id, and the implied RaceMarker start id\n    string raceId;\n    // map of all racers, address to registration time\n    mapping(address => uint) racers;\n    // map of all waypoints/markers\n    mapping(uint8 => RaceMarker) markerMap;\n  }\n\n  /*\n   * Create a race.  An initial deposit is required to start a race and seed the pot.\n   * raceId - string id used to identify the race\n   * startMarkerHash - bytes32 keccak256 hash of the marker value at the beginning of the race.\n   * startMarkerSecret - string hash of the key necessary for the race owner to enable/start the race.\n   *\n   */\n  function createRace(string calldata raceId, bytes32 startMarkerHash, string calldata startMarkerSecret) external payable;\n\n  /*\n   * Add a waypoint to the race.  The race is essentially a list of RaceMarker waypoints and this\n   * function adds the waypoint to the tail of the list.\n   * The waypoint hint/instructions are encrypted with the marker VALUE of the prior waypoint\n   * as a key.  This implies off-chain encryption and coordination in the race app during race\n   * construction.\n   *\n   * raceId - string id used to identify the race\n   * waypointHash - bytes32 keccak256 hash of the waypoint value\n   * waypointSecret - hint/instructions for finding this waypoint\n   *\n   */\n  function addWaypoint(string calldata raceId, bytes32 waypointHash, string calldata waypointSecret) external returns (bool, uint8);\n\n  /*\n   * Begin the race represented by this raceId, if the correct secret is supplied.\n   * raceId - string id used to identify the race\n   * startMarker - race start marker secret value\n   */\n  function startRace(string calldata raceId, string calldata raceSecret) external payable;\n\n\n  /*\n   * Register to participate in this race.  Registration is payable, since the game's pot is self-funding.\n   * string raceId - id of the race for which you wish to register.\n   */\n  function register(string calldata raceId) external payable;\n\n  /*\n   * Prove you have found the waypoint.  Returns boolean and a cause.\n   * raceId - string id of the race\n   * markerId - string id of the marker/waypoint\n   * markerValue - the marker value satisfying marker hash\n   */\n  function prove(string calldata raceId, uint8 markerId, string calldata markerValue) external returns (bool proven, uint8 cause);\n\n  /*\n   * Once you have discovered all waypoints you may complete the race.\n   * If you are the first race entrant to complete, you win the pot.\n   *\n   */\n  function completeRace(string calldata raceId) external;\n\n  /*\n   * Check to see if this race has begun.\n   */\n  function isRaceRunning(string calldata raceId) view external returns (bool);\n\n}\n",
   "sourcePath": "/Users/garyschulte/dev/crypto/amazing_race/contracts/AmazingRace.sol",
   "ast": {
     "absolutePath": "/Users/garyschulte/dev/crypto/amazing_race/contracts/AmazingRace.sol",
@@ -973,21 +973,21 @@
                   "name": "markerId",
                   "nodeType": "VariableDeclaration",
                   "scope": 74,
-                  "src": "2954:24:0",
+                  "src": "2954:14:0",
                   "stateVariable": false,
-                  "storageLocation": "calldata",
+                  "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_string_calldata_ptr",
-                    "typeString": "string"
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
                   },
                   "typeName": {
                     "id": 64,
-                    "name": "string",
+                    "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2954:6:0",
+                    "src": "2954:5:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_string_storage_ptr",
-                      "typeString": "string"
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
                     }
                   },
                   "value": null,
@@ -999,7 +999,7 @@
                   "name": "markerValue",
                   "nodeType": "VariableDeclaration",
                   "scope": 74,
-                  "src": "2980:27:0",
+                  "src": "2970:27:0",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -1010,7 +1010,7 @@
                     "id": 66,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2980:6:0",
+                    "src": "2970:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1020,7 +1020,7 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2929:79:0"
+              "src": "2929:69:0"
             },
             "returnParameters": {
               "id": 73,
@@ -1032,7 +1032,7 @@
                   "name": "proven",
                   "nodeType": "VariableDeclaration",
                   "scope": 74,
-                  "src": "3027:11:0",
+                  "src": "3017:11:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1043,7 +1043,7 @@
                     "id": 69,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3027:4:0",
+                    "src": "3017:4:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -1058,7 +1058,7 @@
                   "name": "cause",
                   "nodeType": "VariableDeclaration",
                   "scope": 74,
-                  "src": "3040:11:0",
+                  "src": "3030:11:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1069,7 +1069,7 @@
                     "id": 71,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3040:5:0",
+                    "src": "3030:5:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -1079,10 +1079,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3026:26:0"
+              "src": "3016:26:0"
             },
             "scope": 87,
-            "src": "2915:138:0",
+            "src": "2915:128:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
@@ -1106,7 +1106,7 @@
                   "name": "raceId",
                   "nodeType": "VariableDeclaration",
                   "scope": 79,
-                  "src": "3235:22:0",
+                  "src": "3225:22:0",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -1117,7 +1117,7 @@
                     "id": 75,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3235:6:0",
+                    "src": "3225:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1127,16 +1127,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3234:24:0"
+              "src": "3224:24:0"
             },
             "returnParameters": {
               "id": 78,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3267:0:0"
+              "src": "3257:0:0"
             },
             "scope": 87,
-            "src": "3213:55:0",
+            "src": "3203:55:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
@@ -1160,7 +1160,7 @@
                   "name": "raceId",
                   "nodeType": "VariableDeclaration",
                   "scope": 86,
-                  "src": "3348:22:0",
+                  "src": "3338:22:0",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -1171,7 +1171,7 @@
                     "id": 80,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3348:6:0",
+                    "src": "3338:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1181,7 +1181,7 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3347:24:0"
+              "src": "3337:24:0"
             },
             "returnParameters": {
               "id": 85,
@@ -1193,7 +1193,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 86,
-                  "src": "3390:4:0",
+                  "src": "3385:4:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1204,7 +1204,7 @@
                     "id": 83,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3390:4:0",
+                    "src": "3385:4:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -1214,20 +1214,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3389:6:0"
+              "src": "3384:6:0"
             },
             "scope": 87,
-            "src": "3325:71:0",
-            "stateMutability": "nonpayable",
+            "src": "3315:76:0",
+            "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
           }
         ],
         "scope": 88,
-        "src": "34:3365:0"
+        "src": "34:3360:0"
       }
     ],
-    "src": "0:3400:0"
+    "src": "0:3395:0"
   },
   "legacyAST": {
     "absolutePath": "/Users/garyschulte/dev/crypto/amazing_race/contracts/AmazingRace.sol",
@@ -2025,21 +2025,21 @@
                   "name": "markerId",
                   "nodeType": "VariableDeclaration",
                   "scope": 74,
-                  "src": "2954:24:0",
+                  "src": "2954:14:0",
                   "stateVariable": false,
-                  "storageLocation": "calldata",
+                  "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_string_calldata_ptr",
-                    "typeString": "string"
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
                   },
                   "typeName": {
                     "id": 64,
-                    "name": "string",
+                    "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2954:6:0",
+                    "src": "2954:5:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_string_storage_ptr",
-                      "typeString": "string"
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
                     }
                   },
                   "value": null,
@@ -2051,7 +2051,7 @@
                   "name": "markerValue",
                   "nodeType": "VariableDeclaration",
                   "scope": 74,
-                  "src": "2980:27:0",
+                  "src": "2970:27:0",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -2062,7 +2062,7 @@
                     "id": 66,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2980:6:0",
+                    "src": "2970:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2072,7 +2072,7 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2929:79:0"
+              "src": "2929:69:0"
             },
             "returnParameters": {
               "id": 73,
@@ -2084,7 +2084,7 @@
                   "name": "proven",
                   "nodeType": "VariableDeclaration",
                   "scope": 74,
-                  "src": "3027:11:0",
+                  "src": "3017:11:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2095,7 +2095,7 @@
                     "id": 69,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3027:4:0",
+                    "src": "3017:4:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -2110,7 +2110,7 @@
                   "name": "cause",
                   "nodeType": "VariableDeclaration",
                   "scope": 74,
-                  "src": "3040:11:0",
+                  "src": "3030:11:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2121,7 +2121,7 @@
                     "id": 71,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3040:5:0",
+                    "src": "3030:5:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -2131,10 +2131,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3026:26:0"
+              "src": "3016:26:0"
             },
             "scope": 87,
-            "src": "2915:138:0",
+            "src": "2915:128:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
@@ -2158,7 +2158,7 @@
                   "name": "raceId",
                   "nodeType": "VariableDeclaration",
                   "scope": 79,
-                  "src": "3235:22:0",
+                  "src": "3225:22:0",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -2169,7 +2169,7 @@
                     "id": 75,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3235:6:0",
+                    "src": "3225:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2179,16 +2179,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3234:24:0"
+              "src": "3224:24:0"
             },
             "returnParameters": {
               "id": 78,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3267:0:0"
+              "src": "3257:0:0"
             },
             "scope": 87,
-            "src": "3213:55:0",
+            "src": "3203:55:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
@@ -2212,7 +2212,7 @@
                   "name": "raceId",
                   "nodeType": "VariableDeclaration",
                   "scope": 86,
-                  "src": "3348:22:0",
+                  "src": "3338:22:0",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -2223,7 +2223,7 @@
                     "id": 80,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3348:6:0",
+                    "src": "3338:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2233,7 +2233,7 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3347:24:0"
+              "src": "3337:24:0"
             },
             "returnParameters": {
               "id": 85,
@@ -2245,7 +2245,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 86,
-                  "src": "3390:4:0",
+                  "src": "3385:4:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2256,7 +2256,7 @@
                     "id": 83,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3390:4:0",
+                    "src": "3385:4:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -2266,20 +2266,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3389:6:0"
+              "src": "3384:6:0"
             },
             "scope": 87,
-            "src": "3325:71:0",
-            "stateMutability": "nonpayable",
+            "src": "3315:76:0",
+            "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
           }
         ],
         "scope": 88,
-        "src": "34:3365:0"
+        "src": "34:3360:0"
       }
     ],
-    "src": "0:3400:0"
+    "src": "0:3395:0"
   },
   "compiler": {
     "name": "solc",
@@ -2287,7 +2287,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.20",
-  "updatedAt": "2020-01-01T05:42:46.074Z",
+  "updatedAt": "2020-01-01T05:55:00.366Z",
   "devdoc": {
     "methods": {}
   },

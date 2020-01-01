@@ -54,6 +54,7 @@ contract mvp is AmazingRace, ERC165Mappable {
 
   function startRace(string calldata raceId, string calldata raceSecret) external payable {
     //no-op, TODO: add race owner logic to set race to "started", payable logic
+    return;
   }
 
   function register(string memory raceId) public payable {
@@ -65,9 +66,9 @@ contract mvp is AmazingRace, ERC165Mappable {
     }
   }
 
-  function prove(string memory raceId, uint8 markerId, string memory guess) public returns (bool proven, uint8 cause) {
+  function prove(string memory raceId, uint8 markerId, string memory markerValue) public returns (bool proven, uint8 cause) {
     if (markerExists(raceId, markerId)) {
-      if (keccak256(abi.encodePacked(guess)) == races[raceId].markerMap[markerId].markerHash){
+      if (keccak256(abi.encodePacked(markerValue)) == races[raceId].markerMap[markerId].markerHash){
         races[raceId].markerMap[markerId].foundByRacers[msg.sender] = block.number;
         return (true, RETURN_PROVEN);
       }
@@ -78,9 +79,10 @@ contract mvp is AmazingRace, ERC165Mappable {
 
   function completeRace(string calldata raceId) external {
     //no-op for now. need more shape!
+    return;
   }
 
-  function keccak256helper(string calldata thing) external pure returns (bytes32){
+  function keccak256helper(string calldata thing) external pure returns (bytes32) {
     return keccak256(abi.encodePacked(thing));
   }
 
@@ -93,7 +95,7 @@ contract mvp is AmazingRace, ERC165Mappable {
       races[raceId].markerMap[markerId].markerId == markerId;
   }
 
-  function isRaceStarted(string memory raceId) public view returns (bool) {
+  function isRaceRunning(string memory raceId) public view returns (bool) {
     return raceExists(raceId) && races[raceId].raceState > 0 && races[raceId].raceState < 255;
   }
 

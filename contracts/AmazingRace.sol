@@ -69,7 +69,7 @@ interface AmazingRace {
    * markerId - string id of the marker/waypoint
    * markerValue - the marker value satisfying marker hash
    */
-  function prove(string calldata raceId, string calldata markerId, string calldata markerValue) external returns (bool proven, uint8 cause);
+  function prove(string calldata raceId, uint8 markerId, string calldata markerValue) external returns (bool proven, uint8 cause);
 
   /*
    * Once you have discovered all waypoints you may complete the race.
@@ -81,6 +81,6 @@ interface AmazingRace {
   /*
    * Check to see if this race has begun.
    */
-  function isRaceRunning(string calldata raceId) external returns (bool);
+  function isRaceRunning(string calldata raceId) view external returns (bool);
 
 }
